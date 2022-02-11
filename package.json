@@ -1,0 +1,36 @@
+{
+  "name": "nodejs-dependency-injection-tsyringe",
+  "version": "0.0.1",
+  "description": "Dependency Injection using tsyringe",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --traceResolution -p tsconfig.json && tsc-alias -p tsconfig.json",
+    "dev": "ts-node-dev -r tsconfig-paths/register src/index.ts",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "tsyringe",
+    "dependency-injection",
+    "dependency",
+    "injection",
+    "di",
+    "js"
+  ],
+  "author": "Luan Maik <luanmaik1994@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.17",
+    "ts-node-dev": "^1.1.8",
+    "tsconfig-paths": "^3.12.0",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "reflect-metadata": "^0.1.13",
+    "tsyringe": "^4.6.0"
+  }
+}

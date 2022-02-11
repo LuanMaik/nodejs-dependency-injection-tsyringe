@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  nodeapp:
+    image: node:16-slim
+    container_name: nodeapp
+    working_dir: /app
+    entrypoint: ['npm','run','dev']
+    environment:
+      PORT: 3003
+    ports:
+      - "3003:3003"
+    volumes:
+      - .:/app
