@@ -1,22 +1,22 @@
-import {InstanceFactory} from "@Core/DependencyInjection";
-import {CreateProduct, CreateProductRequest} from "@Domain/UseCases/Product/CreateProduct";
 import HttpRequest from "@WebAPI/Http/HttpRequest";
 import HttpResponse from "@WebAPI/Http/HttpResponse";
-import {ListProductsHandler} from "@Domain/UseCases/Product/ListProducts";
+import {ProductUseCase, CreateProductRequest} from "@Domain/UseCases/Product/ProductUseCase";
+import {injectable} from "@Core/DependencyInjection";
 
+@injectable()
 export default class ProductController {
 
+    constructor(private productUseCase: ProductUseCase) {}
+
     list = (req: HttpRequest, resp: HttpResponse): void => {
-        const listProductsHandler = InstanceFactory(ListProductsHandler);
-        const response = listProductsHandler.handle();
+        const response = this.productUseCase.list();
         resp.json(response);
     }
 
     create = (req: HttpRequest, resp: HttpResponse): void => {
         const {name, price} = req.body;
         const data = new CreateProductRequest(name, price);
-        const createProductUseCase = InstanceFactory(CreateProduct);
-        const response = createProductUseCase.handle(data);
+        const response = this.productUseCase.create(data);
         resp.json(response);
     }
 }

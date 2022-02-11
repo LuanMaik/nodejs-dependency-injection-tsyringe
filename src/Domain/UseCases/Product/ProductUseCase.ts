@@ -1,19 +1,24 @@
 import Product from "@Domain/Entities/Product";
-import ProductRepository from "@Infrastructure/Database/Repositories/ProductRepository";
-import {injectable} from "@Core/DependencyInjection";
+import {injectable, inject} from "@Core/DependencyInjection";
+import IProductRepository from "@Domain/Interfaces/Repositories/IProductRepository";
 
 @injectable()
-class CreateProduct {
+class ProductUseCase {
 
-    constructor(private productRepository: ProductRepository) {}
+    constructor(@inject("IProductRepository") private productRepository: IProductRepository) {}
 
-    handle = (request: CreateProductRequest): CreateProductResponse => {
+    create = (request: CreateProductRequest): CreateProductResponse => {
         let product = new Product(request.name, request.price);
         product = this.productRepository.save(product);
         return new CreateProductResponse(
             product.getId(),
             product.getName(),
             product.getPrice())
+    }
+
+
+    list = (): Product[] => {
+        return this.productRepository.list();
     }
 }
 
@@ -33,7 +38,7 @@ class CreateProductResponse {
 }
 
 export {
-    CreateProduct,
+    ProductUseCase,
     CreateProductRequest,
     CreateProductResponse
 }
