@@ -1,5 +1,5 @@
 import Product from "@Domain/Entities/Product";
-import IProductRepository from "@Domain/Interfaces/Repositories/IProductRepository";
+import {IProductRepository} from "@Domain/Interfaces/Repositories/IProductRepository";
 
 export default class MemoryProductRepository implements IProductRepository{
     list = (): Product[] => {

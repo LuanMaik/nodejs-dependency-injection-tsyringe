@@ -1,6 +1,8 @@
 import Product from "@Domain/Entities/Product";
 
-export default interface IProductRepository {
+export interface IProductRepository {
     list(): Product[];
     save(product: Product): Product;
 }
+
+export const IProductRepository = Symbol("IProductRepository");
