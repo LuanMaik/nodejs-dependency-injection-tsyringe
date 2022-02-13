@@ -1,6 +1,6 @@
 import Product from "@Domain/Entities/Product";
-import {injectable, inject} from "@Core/DependencyInjection";
 import {IProductRepository} from "@Domain/Interfaces/Repositories/IProductRepository";
+import {inject, injectable} from "@DI/Decorator";
 
 @injectable()
 class ProductUseCase {

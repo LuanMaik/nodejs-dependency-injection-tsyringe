@@ -30,7 +30,7 @@
     "baseUrl": ".",                                     /* Specify the base directory to resolve non-relative module names. */
     "paths": {                                           /* Specify a set of entries that re-map imports to additional lookup locations. */
       "@src/*": ["./src/*"],
-      "@Core/*": ["./src/Core/*"],
+      "@DI/*": ["./src/DI/*"],
       "@Domain/*": ["./src/Domain/*"],
       "@Infrastructure/*": ["./src/Infrastructure/*"],
       "@WebAPI/*": ["./src/WebAPI/*"],

@@ -1,7 +1,7 @@
 import HttpRequest from "@WebAPI/Http/HttpRequest";
 import HttpResponse from "@WebAPI/Http/HttpResponse";
 import {ProductUseCase, CreateProductRequest} from "@Domain/UseCases/Product/ProductUseCase";
-import {injectable} from "@Core/DependencyInjection";
+import {injectable} from "@DI/Decorator";
 
 @injectable()
 export default class ProductController {
