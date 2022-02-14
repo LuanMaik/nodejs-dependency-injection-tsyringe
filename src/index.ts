@@ -1,3 +1,9 @@
-import startServer from "@WebAPI/server";
+import server from "@WebAPI/server";
 
-startServer();
+const port = parseInt(process.env.PORT || '') || 3003;
+
+server.start(port);
+//server.startMultiProcess(port);
+
+
+

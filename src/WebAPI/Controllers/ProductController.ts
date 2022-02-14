@@ -6,7 +6,9 @@ import {injectable} from "@DI/Decorator";
 @injectable()
 export default class ProductController {
 
-    constructor(private productUseCase: ProductUseCase) {}
+    constructor(private productUseCase: ProductUseCase) {
+        //console.log("ProductController::constructor")
+    }
 
     list = (req: HttpRequest, resp: HttpResponse): void => {
         const response = this.productUseCase.list();
