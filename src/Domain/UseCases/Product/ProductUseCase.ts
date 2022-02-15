@@ -5,7 +5,7 @@ import {inject, injectable} from "@DI/Decorator";
 @injectable()
 class ProductUseCase {
 
-    constructor(@inject(IProductRepository) private productRepository: IProductRepository) {}
+    constructor(@inject(IProductRepository) private productRepository: IProductRepository){}
 
     create = (request: CreateProductRequest): CreateProductResponse => {
         let product = new Product(request.name, request.price);

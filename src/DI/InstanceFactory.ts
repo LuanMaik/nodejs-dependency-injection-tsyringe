@@ -1,6 +1,6 @@
 import InjectionToken from "tsyringe/dist/typings/providers/injection-token";
-import {container} from "tsyringe";
+import Container from "@DI/Container";
 
 export function InstanceFactory<T>(token: InjectionToken<T>): T {
-    return container.resolve(token);
+    return Container.resolve(token);
 }

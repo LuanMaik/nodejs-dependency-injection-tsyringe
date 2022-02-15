@@ -5,7 +5,7 @@ import {ICategoryRepository} from "@Domain/Interfaces/Repositories/ICategoryRepo
 @injectable()
 class CategoryUseCase {
 
-    constructor(@inject(ICategoryRepository) private categoryRepository: ICategoryRepository) {}
+    constructor(@inject(ICategoryRepository) private categoryRepository: ICategoryRepository){}
 
     create = (request: CreateCategoryRequest): CreateCategoryResponse => {
         let category = new Category(request.name);

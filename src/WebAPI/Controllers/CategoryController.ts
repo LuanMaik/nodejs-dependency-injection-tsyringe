@@ -6,9 +6,7 @@ import {CategoryUseCase, CreateCategoryRequest} from "@Domain/UseCases/Category/
 @injectable()
 export default class CategoryController {
 
-    constructor(private categoryUseCase: CategoryUseCase) {
-        console.log("CategoryController::constructor")
-    }
+    constructor(private categoryUseCase: CategoryUseCase){}
 
     list = (req: HttpRequest, resp: HttpResponse): void => {
         const response = this.categoryUseCase.list();

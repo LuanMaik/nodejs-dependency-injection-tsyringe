@@ -18,8 +18,4 @@ class Container {
 
 const containerApp = new Container();
 
-export function InstanceResolve<T>(token: InjectionToken<T>): T {
-    return containerApp.resolve(token);
-}
-
 export default containerApp;
